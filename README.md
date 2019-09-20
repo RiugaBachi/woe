@@ -54,4 +54,4 @@ data FriendRegistrationResult
 ```
 
 Note: `Describable` is a separate typeclass from my `describe` package. But this demonstrates an additional benefit
-of `WOE`: avoiding blanket de/serialization typeclass instances over all implementations of `Enum` or `IsoEnum`, which can (and will) lead to ambiguities.
+of `deriving via WOE`: avoiding blanket de/serialization typeclass instances over all implementations of `Enum` or `IsoEnum`, which can (and will) lead to ambiguities.
