@@ -37,6 +37,8 @@ you want an (arguably unsafe) `Enum` instance for your type instead of relying o
 # Example
 
 ```hs
+import Data.WOE
+
 data FriendRegistrationResult
   = FriendRegistered
   | NoEmptyFriendSlots
@@ -50,3 +52,6 @@ data FriendRegistrationResult
   deriving (Enum, Describable)
     via WOE FriendRegistrationResult
 ```
+
+Note: `Describable` is a separate typeclass from my `describe` package. But this demonstrates an additional benefit
+of `WOE`: avoiding blanket de/serialization typeclass instances over all implementations of `Enum` or `IsoEnum`, which can (and will) lead to ambiguities.
