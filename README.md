@@ -1,7 +1,7 @@
 # woe
 Convenient typeclass for defining arbitrary-index enums, which allow for safe derivation of Enum using DerivingVia.
 
-# The Problem
+## The Problem
 In certain cases (e.g. server emulation), we may find ourselves stuck with reimplementing shoddy serverside logic
 due to how the original game chose to encode its enumerations for de/serialization in the networking and datafiles.
 These enums tend to be huge (up to 200+ entries), contain unks, and at times have "holes" in the valid indices of the
@@ -21,7 +21,7 @@ _2*n_ declaration problem. If you have 200 items in your enum ADT, you have to w
 writing updating such large and redundant `Enum` implementations is highly error-prone and may lead to an unintentional
 violation of `Enum`'s isomorphicity law (`fromEnum . toEnum = id`).
 
-# The Solution
+## The Solution
 `woe` introduces the typeclass `IsoEnum` and the wrapper newtype `WOE` (Write-Once Enum) to solve the above problems. The acronym sounds a bit lame
 and unoriginal, but I digress.
 
@@ -34,7 +34,7 @@ To solve redundant declarations, `IsoEnum` provides a single method, `mapping ::
 each index-value exactly once. Should you update it, you will only have to update a single pair instead of two. Should
 you want an (arguably unsafe) `Enum` instance for your type instead of relying on just `to/fromEnumSafely`, again, use ``deriving (Enum) via WOE MyType``.
 
-# Example
+## Example
 
 ```hs
 import Data.WOE
