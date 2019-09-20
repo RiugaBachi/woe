@@ -1,6 +1,6 @@
 -- | 'WOE' is an acronym for "Write-Once Enum". This package provides the 'IsoEnum' class to allow for more convenient declaration of arbitrary-index enums. This removes the need for writing boilerplate 'toEnum'/'fromEnum' definitions if you were to implement 'Enum' directly. To expose an 'Enum' interface for your custom enum type, simply do @deriving Enum via WOE@. This requires the @DerivingVia@ extension provided by GHC 8.6.1+.
 module Data.WOE(
-  IsoEnum,
+  IsoEnum, mapping,
   WOE(..),
   toEnumSafely,
   fromEnumSafely
