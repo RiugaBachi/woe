@@ -1,6 +1,6 @@
 cabal-version:       2.4
 name:                woe
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            Convenient typeclass for defining arbitrary-index enums.
 description:         Convenient typeclass for defining arbitrary-index enums, which allow for safe derivation of Enum using DerivingVia.
 license:             BSD-3-Clause
