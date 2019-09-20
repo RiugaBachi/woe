@@ -12,7 +12,7 @@ import Data.Maybe
 class Eq a => IsoEnum a where
   mapping :: [(Int, a)]
 
-data WOE a = WOE { unwrapWOE :: a }
+newtype WOE a = WOE { unwrapWOE :: a }
 
 toEnumSafely :: IsoEnum a => Int -> Maybe a
 toEnumSafely n = lookup n mapping
